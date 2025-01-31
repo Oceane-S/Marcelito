@@ -3,16 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Particules Animation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lettre d'amour 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: 'Arial', sans-serif;
+        }
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #ff69b4;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+        .message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .close-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <script src="script.js"></script>
-    <div id="container">
-        <div id="message">
-          <a id="animate" href="#">Transmit</a>
-        </div>
-      </div>
+    <div class="envelope" onclick="openLetter()">
+        📩 Clique pour ouvrir la lettre
+    </div>
+    <div class="message" id="message">
+        <p>Mon amour, tu es la plus belle chose qui me soit arrivée. 💖</p>
+        <button class="close-btn" onclick="closeLetter()">Fermer</button>
+    </div>
+    <script>
+        function openLetter() {
+            document.getElementById("message").style.display = "block";
+        }
+        function closeLetter() {
+            document.getElementById("message").style.display = "none";
+        }
+    </script>
 </body>
 </html>
-
